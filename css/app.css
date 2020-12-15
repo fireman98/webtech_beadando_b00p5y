@@ -130,9 +130,15 @@ ul {
     border: none;
 }
 
-.button-primary:focus,
-.button-primary:active,
-.button-primary:hover {
+.button-primary:focus:enabled,
+.button-primary:active:enabled,
+.button-primary:hover:enabled {
     background: #ccb79b;
     color: white;
+}
+
+.button-primary:disabled {
+    background-color: grey;
+    color: white;
+    cursor: not-allowed;
 }

@@ -83,6 +83,7 @@ $(function () {
 
 
     function modifyButtonHandler(e) {
+        setPressed(1);
         let item = $(e.target).closest("li");
         let key = item.data('key');
         let type = item.data('type');
@@ -177,6 +178,7 @@ $(function () {
                 });
                 break;
         }
+        setPressed(0);
     }
 
     //GET
@@ -229,6 +231,7 @@ $(function () {
     }
 
     //UPDATE
+    //Nem igazi update, mert új id-val jön létre a módosított
     function updateCar(car) {
         return new Promise((resolve, reject) => {
             deleteCar(car._id).then(() => {
@@ -361,7 +364,7 @@ $(function () {
         $.each(cars, (key, value) => {
             let li = $('<li/>')
                 .addClass('menu-item')
-                .html(`<div class="menu-item-column key_name">'${value.name}</div> <div class="menu-item-column key_consumption">${value.consumption}</div> <div class="menu-item-column key_color">${value.color}</div> <div class="menu-item-column key_manufacturer">${value.manufacturer}</div> <div class="menu-item-column key_year">${value.year}</div> <div class="menu-item-column key_avaiable">${value.avaiable}</div> <div class="manu-item-column buttons-column key_horsepower">${value.horsepower}</div ><div class="menu-item-column"> <button class="modify button button-primary">Módosítás</button> <button class="delete button button-primary">Törlés</button> </div>`)
+                .html(`<div class="menu-item-column key_name">${value.name}</div> <div class="menu-item-column key_consumption">${value.consumption}</div> <div class="menu-item-column key_color">${value.color}</div> <div class="menu-item-column key_manufacturer">${value.manufacturer}</div> <div class="menu-item-column key_year">${value.year}</div> <div class="menu-item-column key_avaiable">${value.avaiable}</div> <div class="manu-item-column  key_horsepower">${value.horsepower}</div ><div class="menu-item-column buttons-column"> <button class="modify button button-primary">Módosítás</button> <button class="delete button button-primary">Törlés</button> </div>`)
                 .data('key', value._id)
                 .data('type', 'car')
                 .appendTo($carList);
@@ -377,6 +380,7 @@ $(function () {
 
         $(".delete").click(deleteButtonHandler);
         $(".modify").on('click', modifyButtonHandler);
+        focusTrap();
     }
 
 
@@ -459,6 +463,9 @@ $(function () {
     setActiveTab(0);
     $swiperButtons.on('click', swiperButtonHandler);
 
+    /**
+     * Commands for testing requests
+     */
     window.consoleAPI = {
         showCars: function () {
             console.log(cars);
