@@ -1,0 +1,138 @@
+body {
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    min-width: 1280px;
+}
+
+ul {
+    max-width: 1200px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.menu-item-column {
+    padding-left: 10px;
+    padding-right: 10px;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item-column.buttons-column button {
+    margin-right: 10px;
+}
+
+.form-control {
+    flex: 1;
+    min-width: 0;
+}
+
+.swiper-header {
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.swiper-container {
+    overflow: hidden;
+}
+
+.swiper-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    transition-duration: 800ms;
+    will-change: transform;
+}
+
+.swiper-tab {
+    flex-shrink: 0;
+    position: relative;
+    padding: 5px 5px;
+}
+
+.swiper-buttons {
+    display: flex;
+    box-shadow: 0px 0px 5px 1px rgba(48, 49, 51, 1);
+    border-radius: 6px;
+}
+
+.swiper-button {
+    border-radius: 6px;
+    border: 1px solid #ccb79b;
+    background: white;
+    padding: 10px 30px;
+    flex: 1;
+    cursor: pointer;
+    color: #ccb79b;
+    border-right: none;
+    transition: all 300ms;
+    outline: none;
+}
+
+.swiper-button:focus,
+.swiper-button:active,
+.swiper-button:hover {
+    background: #ccb79b80;
+    color: white;
+}
+
+.swiper-button.active {
+    background: #ccb79b;
+    color: black;
+}
+
+.swiper-button.active:focus,
+.swiper-button.active:active,
+.swiper-button.active:hover {
+    background: #998975;
+}
+
+.swiper-button:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.swiper-button:last-child {
+    border-right: 1px solid #ccb79c;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.swiper-button.active {
+    background: #ccb79b;
+    color: white;
+}
+
+.button {
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0px 0px 5px 1px rgba(48, 49, 51, 1);
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+    transition: all 300ms;
+}
+
+.button-primary {
+    background: white;
+    color: #ccb79b;
+
+    border: none;
+}
+
+.button-primary:focus,
+.button-primary:active,
+.button-primary:hover {
+    background: #ccb79b;
+    color: white;
+}
